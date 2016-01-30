@@ -13,6 +13,9 @@ $(function () {
     }
   });
 
+  $('#name').on('keyup', function () {
+    $('#name-result').text('My name is ' + $(this).val());
+  });
 
   // Old Ajax Call
   function fake () {

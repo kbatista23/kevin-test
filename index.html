@@ -8,7 +8,7 @@
   <script src="main.js"></script>
   <script src="app.js"></script>
 </head>
-<body>
+<body ng-app="Kevin">
   <nav>
     <ul>
       <li><a href="#" class="one">Panel 1</a></li>
@@ -17,5 +17,23 @@
   </nav>
 
   <div id="panel"></div>
+
+  <input type="text" id="name">
+  <p id="name-result">My name is </p>
+
+  <!-- Angular -->
+
+  <div ng-controller="test">
+    <button ng-click="show()">Show</button>
+    <button ng-click="hide()">Hide</button>
+
+    <input type="text" ng-model="name">
+    <p ng-show="visible" dbm-casa>My name is {{ name }}</p>
+
+    <p ng-click="change()" ng-style="{color: color}">{{ today | date:'EEEE d MMM, yyyy' | uppercase }}</p>
+    <p>{{ 500 | currency:'C' }}</p>
+
+    <p ng-repeat="item in data">{{ item | troll }}</p>
+  </div>
 </body>
 </html>
