@@ -12,4 +12,29 @@ $(function () {
       $.ajax('./panel-2.html').done(complete);
     }
   });
+
+
+  // Old Ajax Call
+  function fake () {
+    var httpRequest;
+
+    if (window.XMLHttpRequest) {
+      httpRequest = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+      httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    httpRequest.onreadystatechange = function (data) {
+      if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        if (httpRequest.status === 200) {
+          $('#panel').html(data);
+        } else {
+          alert('Algo salio mal');
+        }
+      }
+    };
+
+    httpRequest.open('GET', './panel-1.html', true);
+    httpRequest.send(null);
+  }
 });
